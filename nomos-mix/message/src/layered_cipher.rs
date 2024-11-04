@@ -247,7 +247,7 @@ impl<D: ConsistentLengthLayeredCipherData> ConsistentLengthLayeredCipher<D> {
     }
 
     // In-place XOR operation: b is applied to a.
-    fn xor(a: &mut [u8], b: &[u8]) {
+    fn xor_in_place(a: &mut [u8], b: &[u8]) {
         assert_eq!(a.len(), b.len());
         a.iter_mut().zip(b.iter()).for_each(|(x1, &x2)| *x1 ^= x2);
     }
