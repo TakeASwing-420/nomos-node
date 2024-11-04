@@ -243,7 +243,7 @@ impl<D: ConsistentLengthLayeredCipherData> ConsistentLengthLayeredCipher<D> {
                 &pseudorandom_bytes[pseudorandom_bytes.len() - data.len()..]
             }
         };
-        Self::xor(data, pseudorandom_bytes)
+        Self::xor_in_place(data, pseudorandom_bytes)
     }
 
     // In-place XOR operation: b is applied to a.
